@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Modalize} from 'react-native-modalize';
-import {colors} from '../../../../styles/colors';
+import { View, Text, StyleSheet } from 'react-native';
+import { Modalize } from 'react-native-modalize';
+import { colors } from '../../../../styles/colors';
 
 interface Props {
   seasons: string[];
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const SeasonModal = React.forwardRef<Modalize, Props>(
-  ({seasons, onSelectSeason}, ref) => {
+  ({ seasons, onSelectSeason }, ref) => {
     function handleSelect(value: string) {
       onSelectSeason(value);
       ref?.current?.close();
@@ -18,7 +18,7 @@ export const SeasonModal = React.forwardRef<Modalize, Props>(
 
     return (
       <Modalize
-        scrollViewProps={{showsVerticalScrollIndicator: false}}
+        scrollViewProps={{ showsVerticalScrollIndicator: false }}
         modalHeight={500}
         modalStyle={styles.container}
         ref={ref}>

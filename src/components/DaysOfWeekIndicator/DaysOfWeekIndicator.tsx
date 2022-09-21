@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {DaysOfWeek} from '../../models/CommonModels';
-import {colors} from '../../styles/colors';
+import { StyleSheet, Text, View } from 'react-native';
+import { DaysOfWeek } from '../../models/CommonModels';
+import { colors } from '../../styles/colors';
 
 interface Day {
   value: DaysOfWeek;
@@ -41,7 +41,7 @@ const DAYS: Day[] = [
 interface Props {
   days: DaysOfWeek[];
 }
-export function DaysOfWeekIndicator({days}: Props) {
+export function DaysOfWeekIndicator({ days }: Props) {
   return (
     <View style={styles.container}>
       {DAYS.map(day => {

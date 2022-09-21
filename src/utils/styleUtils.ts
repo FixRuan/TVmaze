@@ -10,4 +10,4 @@ const shadow = {
   elevation: 10,
 };
 
-export const stylesUtils = {shadow};
+export const stylesUtils = { shadow };

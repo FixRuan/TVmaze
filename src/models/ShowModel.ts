@@ -1,4 +1,4 @@
-import {DaysOfWeek, ImageBySize, Rating} from './CommonModels';
+import { DaysOfWeek, ImageBySize, Rating } from './CommonModels';
 
 export interface Show {
   id: string;

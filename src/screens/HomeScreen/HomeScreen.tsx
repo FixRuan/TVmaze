@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 
-import {useQuery} from 'react-query';
-import {DefaultTextInput} from '../../components/DefaultTextInput/DefaultTextInput';
-import {ScreenTemplate} from '../../components/ScreenTemplate/ScreenTemplate';
-import {ShowList} from '../../components/ShowList/ShowList';
-import {useDebounce} from '../../hooks/useDebounce';
-import {useInfiniteList} from '../../hooks/useInfiniteList';
-import {QueryKeys} from '../../services/QueryKeys';
-import {showService} from '../../services/show/showService';
+import { useQuery } from 'react-query';
+import { DefaultTextInput } from '../../components/DefaultTextInput/DefaultTextInput';
+import { ScreenTemplate } from '../../components/ScreenTemplate/ScreenTemplate';
+import { ShowList } from '../../components/ShowList/ShowList';
+import { useDebounce } from '../../hooks/useDebounce';
+import { useInfiniteList } from '../../hooks/useInfiniteList';
+import { QueryKeys } from '../../services/QueryKeys';
+import { showService } from '../../services/show/showService';
 
 export function HomeScreen() {
   const [searchText, setSearchText] = useState('');
@@ -27,7 +27,7 @@ export function HomeScreen() {
 
   function onEndReached() {
     if (listQuery.hasNextPage) {
-      listQuery.fetchNextPage({cancelRefetch: true});
+      listQuery.fetchNextPage({ cancelRefetch: true });
     }
   }
 

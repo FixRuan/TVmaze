@@ -26,5 +26,5 @@ export interface Episode {
 
 export interface GroupedEpisodes {
   seasonNames: string[];
-  seasons: {[key: string]: Episode[]};
+  seasons: { [key: string]: Episode[] };
 }

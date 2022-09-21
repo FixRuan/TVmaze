@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-import {Show} from '../../../models/ShowModel';
-import {colors} from '../../../styles/colors';
+import { Show } from '../../../models/ShowModel';
+import { colors } from '../../../styles/colors';
 
-import {CardImage} from '../../CardImage/CardImage';
-import {StarRating} from '../../StarRating/StarRating';
+import { CardImage } from '../../CardImage/CardImage';
+import { StarRating } from '../../StarRating/StarRating';
 
 export function ShowListItem(show: Show) {
   const navigation = useNavigation();
 
   function navigateToShowDetails() {
-    navigation.navigate('ShowDetails', {show});
+    navigation.navigate('ShowDetails', { show });
   }
 
   return (

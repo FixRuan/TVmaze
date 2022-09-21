@@ -1,13 +1,13 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
-import {DaysOfWeekIndicator} from '../../../../components/DaysOfWeekIndicator/DaysOfWeekIndicator';
-import {colors} from '../../../../styles/colors';
-import {commonUtils} from '../../../../utils/commonUtils';
-import {Genres} from '../Genres/Genres';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { DaysOfWeekIndicator } from '../../../../components/DaysOfWeekIndicator/DaysOfWeekIndicator';
+import { colors } from '../../../../styles/colors';
+import { commonUtils } from '../../../../utils/commonUtils';
+import { Genres } from '../Genres/Genres';
 
-import {Show} from '../../../../models/ShowModel';
-import {RenderHtml} from '../../../../components/RenderHtml/RenderHtml';
-import {FavoriteButton} from '../FavoriteButton/FavoriteButton';
+import { Show } from '../../../../models/ShowModel';
+import { RenderHtml } from '../../../../components/RenderHtml/RenderHtml';
+import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const coverOriginalDimensions = {
@@ -23,7 +23,7 @@ const COVER_HEIGHT =
 interface Props {
   show: Show;
 }
-export function ShowInfo({show}: Props) {
+export function ShowInfo({ show }: Props) {
   const imageSource = commonUtils.getImageSource(show.image, 'original');
   return (
     <>

@@ -1,7 +1,7 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {Show} from '../models/ShowModel';
+import { Show } from '../models/ShowModel';
 
 type FavoriteList = {
   [key in string]: Show;
@@ -17,11 +17,11 @@ interface FavoriteContext {
 const FavoriteContext = createContext<FavoriteContext>({
   showList: [],
   isFavorite: () => false,
-  deleteFavorite: () => {},
-  addFavorite: () => {},
+  deleteFavorite: () => { },
+  addFavorite: () => { },
 });
 
-export const FavoriteProvider: React.FC = ({children}) => {
+export const FavoriteProvider: React.FC = ({ children }) => {
   const [favoriteList, setFavoriteList] = useState<FavoriteList>({});
   const [showList, setShowList] = useState<Show[]>([]);
 
@@ -50,15 +50,19 @@ export const FavoriteProvider: React.FC = ({children}) => {
     try {
       const stringifiedList = JSON.stringify(list);
       AsyncStorage.setItem(SHOW_LIST_KEY, stringifiedList);
-    } catch (error) {}
+    } catch (error) { }
     //handle error
   }
 
   function updateShowList(list: FavoriteList) {
     setShowList(
       Object.values(list).sort((a, b) => {
-        if (a.name > b.name) return 1;
-        if (a.name < b.name) return -1;
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
         return 0;
       }),
     );
@@ -73,7 +77,7 @@ export const FavoriteProvider: React.FC = ({children}) => {
   }
   function deleteFavorite(showId: string) {
     if (favoriteList[showId]) {
-      const updatedList = {...favoriteList};
+      const updatedList = { ...favoriteList };
       delete updatedList[showId];
 
       console.log(updatedList);
@@ -86,7 +90,7 @@ export const FavoriteProvider: React.FC = ({children}) => {
 
   return (
     <FavoriteContext.Provider
-      value={{addFavorite, deleteFavorite, isFavorite, showList}}>
+      value={{ addFavorite, deleteFavorite, isFavorite, showList }}>
       {children}
     </FavoriteContext.Provider>
   );

@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import {View, StyleSheet} from 'react-native';
-import {DefaultTextInput} from '../../components/DefaultTextInput/DefaultTextInput';
-import {ScreenTemplate} from '../../components/ScreenTemplate/ScreenTemplate';
-import {ShowList} from '../../components/ShowList/ShowList';
-import {useFavorite} from '../../contexts/Favorite';
-import {useDebounce} from '../../hooks/useDebounce';
-import {Show} from '../../models/ShowModel';
-import {SIZE} from '../../utils/constants';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { DefaultTextInput } from '../../components/DefaultTextInput/DefaultTextInput';
+import { ScreenTemplate } from '../../components/ScreenTemplate/ScreenTemplate';
+import { ShowList } from '../../components/ShowList/ShowList';
+import { useFavorite } from '../../contexts/Favorite';
+import { useDebounce } from '../../hooks/useDebounce';
+import { Show } from '../../models/ShowModel';
+import { SIZE } from '../../utils/constants';
 
 export function FavoriteScreen() {
-  const {showList} = useFavorite();
+  const { showList } = useFavorite();
 
   const [searchText, setSearchText] = useState('');
   const [isSearch, setIsSearch] = useState(false);
@@ -30,7 +30,7 @@ export function FavoriteScreen() {
   }
 
   return (
-    <ScreenTemplate style={{paddingHorizontal: SIZE.padding}}>
+    <ScreenTemplate style={{ paddingHorizontal: SIZE.padding }}>
       <View style={styles.inputContainer}>
         <DefaultTextInput
           placeholder="Search show by name"

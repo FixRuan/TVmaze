@@ -1,9 +1,9 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
-import {ImageBySize} from '../../models/CommonModels';
-import {colors} from '../../styles/colors';
-import {commonUtils} from '../../utils/commonUtils';
-import {stylesUtils} from '../../utils/styleUtils';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ImageBySize } from '../../models/CommonModels';
+import { colors } from '../../styles/colors';
+import { commonUtils } from '../../utils/commonUtils';
+import { stylesUtils } from '../../utils/styleUtils';
 
 interface Props {
   image: ImageBySize | null;
